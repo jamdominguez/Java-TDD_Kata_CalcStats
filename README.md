@@ -1,7 +1,8 @@
 # Java-TDD_Kata_CalcStats
 Simple java local application, using Test Driven Development methodology.
 
-**Level: EASY**
+**Level: EASY**<br>
+**Status: Development**
 
 Setup:
  - JDK 1.8.0_191
