@@ -24,8 +24,9 @@ public class CalcStats {
         return this.nums.length;
     }
 
-    public int average() {
-        for (int i = 0; i < this.nums.length; i++) if (this.nums[i] == 1) return 1;
-        return 0;
+    public float average() {
+        int sum = 0;
+        for (int i = 0; i < this.nums.length; i++) sum += this.nums[i];
+        return sum / this.nums.length;
     }
 }

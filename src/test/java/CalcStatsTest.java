@@ -140,18 +140,40 @@ public class CalcStatsTest {
     @Test
     public void averageIs0IfInputsAre0() throws Exception {
         CalcStats calcStats = new CalcStats(new int[]{0});
-        Assert.assertEquals(0, calcStats.average());
+        Assert.assertEquals(0f, calcStats.average(), 0);
     }
 
     @Test
     public void averageIs0IfInputsAre0_0_0() throws Exception {
         CalcStats calcStats = new CalcStats(new int[]{0, 0, 0});
-        Assert.assertEquals(0, calcStats.average());
+        Assert.assertEquals(0f, calcStats.average(),0);
     }
 
     @Test
     public void averageIs1IfInputsAre1_1_1() throws Exception {
         CalcStats calcStats = new CalcStats(new int[]{1, 1, 1});
-        Assert.assertEquals(1, calcStats.average());
+        Assert.assertEquals(1f, calcStats.average(), 0);
+    }
+
+    @Test
+    public void averageIs0With3IfInputsAre2_4() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{2, 4});
+        Assert.assertEquals(3f, calcStats.average(), 0);
+    }
+
+    @Test
+    public void averageIs0With5IfInputsAre0_1() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{0, 1});
+        float average = calcStats.average();
+        System.out.println(average);
+        Assert.assertEquals(0.5f, average, 0);
+    }
+
+    @Test
+    public void averageIs2With5IfInputsAre4_1() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{4, 1});
+        float average = calcStats.average();
+        System.out.println(average);
+        Assert.assertEquals(2.5f, average, 0);
     }
 }
