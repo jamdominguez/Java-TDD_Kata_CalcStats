@@ -148,4 +148,10 @@ public class CalcStatsTest {
         CalcStats calcStats = new CalcStats(new int[]{0, 0, 0});
         Assert.assertEquals(0, calcStats.average());
     }
+
+    @Test
+    public void averageIs1IfInputsAre1_1_1() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{1, 1, 1});
+        Assert.assertEquals(1, calcStats.average());
+    }
 }

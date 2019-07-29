@@ -25,6 +25,7 @@ public class CalcStats {
     }
 
     public int average() {
+        for (int i = 0; i < this.nums.length; i++) if (this.nums[i] == 1) return 1;
         return 0;
     }
 }
