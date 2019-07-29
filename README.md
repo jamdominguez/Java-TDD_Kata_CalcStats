@@ -2,7 +2,7 @@
 Simple java local application, using Test Driven Development methodology.
 
 **Level: EASY**<br>
-**Status: Development**
+**Status: Completed**
 
 Setup:
  - JDK 1.8.0_191
