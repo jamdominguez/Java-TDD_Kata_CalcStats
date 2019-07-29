@@ -71,4 +71,40 @@ public class CalcStatsTest {
         Assert.assertEquals(-11, calcStats.minValue());
     }
 
+    @Test
+    public void maxValueMustBe0WithInput0() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{0});
+        Assert.assertEquals(0, calcStats.maxValue());
+    }
+
+    @Test
+    public void maxValueMustBe10WithInput0_10() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{0, 10});
+        Assert.assertEquals(10, calcStats.maxValue());
+    }
+
+    @Test
+    public void maxValueMustBe10WithInput0_1_2_3_4_5_10() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{0, 1, 2, 3, 4, 5, 10});
+        Assert.assertEquals(10, calcStats.maxValue());
+    }
+
+    @Test
+    public void maxValueMustBe10WithInput0_1_2_10_3_4_5() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{0, 1, 2, 10, 3, 4, 5});
+        Assert.assertEquals(10, calcStats.maxValue());
+    }
+
+    @Test
+    public void maxValueMustBe0WithInputNegatives() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{-5, -1, -2, 0, -3, -4, -5});
+        Assert.assertEquals(0, calcStats.maxValue());
+    }
+
+    @Test
+    public void maxValueMustBe10NegativeWithInputNegatives() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{-50, -10, -20, -30, -40, -100});
+        Assert.assertEquals(-10, calcStats.maxValue());
+    }
+
 }

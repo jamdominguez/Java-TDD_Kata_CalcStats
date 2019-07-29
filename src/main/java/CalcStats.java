@@ -13,4 +13,10 @@ public class CalcStats {
         for (int i = 1; i < nums.length; i++) if (nums[i] < min) min = nums[i];
         return min;
     }
+
+    public int maxValue() {
+        int max = this.nums[0];
+        for (int i = 1; i < nums.length; i++) if (nums[i] > max) max = nums[i];
+        return max;
+    }
 }
