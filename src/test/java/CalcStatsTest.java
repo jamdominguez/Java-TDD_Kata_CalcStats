@@ -107,4 +107,21 @@ public class CalcStatsTest {
         Assert.assertEquals(-10, calcStats.maxValue());
     }
 
+    @Test
+    public void sequenceIs1IfInputIs1() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{1});
+        Assert.assertEquals(1, calcStats.sequence());
+    }
+
+    @Test
+    public void sequenceIs2IfInputIs0_1() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{0, 1});
+        Assert.assertEquals(2, calcStats.sequence());
+    }
+
+    @Test
+    public void sequenceIs5IfInputIs1Negative_0_1_2_3() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{-1, 0, 1, 2, 3});
+        Assert.assertEquals(5, calcStats.sequence());
+    }
 }
