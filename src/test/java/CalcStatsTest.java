@@ -72,6 +72,12 @@ public class CalcStatsTest {
     }
 
     @Test
+    public void minValueMustBe11negativeWithInputNegativesAndRepeated() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{-4, -11, -3, -11, -5});
+        Assert.assertEquals(-11, calcStats.minValue());
+    }
+
+    @Test
     public void maxValueMustBe0WithInput0() throws Exception {
         CalcStats calcStats = new CalcStats(new int[]{0});
         Assert.assertEquals(0, calcStats.maxValue());
@@ -108,6 +114,12 @@ public class CalcStatsTest {
     }
 
     @Test
+    public void maxValueMustBe10NegativeWithInputNegativesAndRepeated() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{-50, -10, -20, -30, -40, -10});
+        Assert.assertEquals(-10, calcStats.maxValue());
+    }
+
+    @Test
     public void sequenceIs1IfInputIs1() throws Exception {
         CalcStats calcStats = new CalcStats(new int[]{1});
         Assert.assertEquals(1, calcStats.sequence());
@@ -123,5 +135,17 @@ public class CalcStatsTest {
     public void sequenceIs5IfInputIs1Negative_0_1_2_3() throws Exception {
         CalcStats calcStats = new CalcStats(new int[]{-1, 0, 1, 2, 3});
         Assert.assertEquals(5, calcStats.sequence());
+    }
+
+    @Test
+    public void averageIs0IfInputsAre0() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{0});
+        Assert.assertEquals(0, calcStats.average());
+    }
+
+    @Test
+    public void averageIs0IfInputsAre0_0_0() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{0, 0, 0});
+        Assert.assertEquals(0, calcStats.average());
     }
 }

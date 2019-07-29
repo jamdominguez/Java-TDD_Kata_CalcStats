@@ -23,4 +23,8 @@ public class CalcStats {
     public int sequence() {
         return this.nums.length;
     }
+
+    public int average() {
+        return 0;
+    }
 }
