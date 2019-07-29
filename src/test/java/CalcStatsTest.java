@@ -146,7 +146,7 @@ public class CalcStatsTest {
     @Test
     public void averageIs0IfInputsAre0_0_0() throws Exception {
         CalcStats calcStats = new CalcStats(new int[]{0, 0, 0});
-        Assert.assertEquals(0f, calcStats.average(),0);
+        Assert.assertEquals(0f, calcStats.average(), 0);
     }
 
     @Test
@@ -177,5 +177,14 @@ public class CalcStatsTest {
     public void averageIs3With5IfInputsAre4_1Negative_4_2() throws Exception {
         CalcStats calcStats = new CalcStats(new int[]{4, -1, 4, 2});
         Assert.assertEquals(2.25f, calcStats.average(), 0);
+    }
+
+    @Test
+    public void webTDDExample() throws Exception {
+        CalcStats calcStats = new CalcStats(new int[]{6, 9, 15, -2, 92, 11});
+        Assert.assertEquals(-2, calcStats.minValue());
+        Assert.assertEquals(92, calcStats.maxValue());
+        Assert.assertEquals(6, calcStats.sequence());
+        Assert.assertEquals(21.833333f, calcStats.average(), 0.00001);
     }
 }
